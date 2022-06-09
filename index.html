@@ -21,45 +21,31 @@
         <img id="saturn" src="images/saturn.jpg" crossorigin="anonymous" />
         <img id="uranus" src="images/uranus.jpg" crossorigin="anonymous" />
         <img id="neptune" src="images/neptune.jpg" crossorigin="anonymous" />
-        <img id="glow" src="images/snowflake.png" crossorigin="anonymous" />
       </a-assets>
+      <!--position: left right, up down, further closer--> 
+
+      <!--background-->
       <a-sky
         color = "#FFFFFF" 
         material = "src: #space">
       </a-sky>
 
-      <!--position: left right, up down, further closer-->   
+      <!--camera (starting point)-->
+      <a-entity position="0 -1.5 -2.5">
+        <a-camera></a-camera>
+      </a-entity>
       
-      <a-sphere 
-        position="-12 1.25 -5" 
-        radius="3" 
-        material = "src: #sun;"
-        animation="
-          property: object3D.rotation.y;
-          to: 60;
-          dur: 20000;
-          easing: linear;
-          loop: true"
+      <!-- ground surface-->
+      <a-plane 
+        position="0 0 -3" 
+        rotation="-90 0 0" 
+        width="3" 
+        height="3" 
+        color="#212529" 
         shadow>
-      </a-sphere>
-
-      <a-light light="type: point; distance: 22; color: #FFFFFF; intensity: 1.5 castShadow: true"  position="-8 1.25 -5">
-      </a-light>
+      </a-plane>
       
-      <a-sphere 
-        position="-7 1.25 -5" 
-        radius=".15" 
-        material = "src: #mercury;"
-        animation="
-          property: object3D.rotation.y;
-          to: 80;
-          dur: 20000;
-          easing: linear;
-          loop: true"
-        shadow>
-      </a-sphere>
-      
-      <a-sphere 
+      <!-- <a-sphere 
         position="-5 1.25 -5" 
         radius=".4" 
         material = "src: #venus;"
@@ -70,11 +56,13 @@
           easing: linear;
           loop: true"
         shadow>
-      </a-sphere>
+      </a-sphere> -->
 
+      <!--earth-->
       <a-sphere 
-        position="-3 1.25 -5" 
-        radius=".5" 
+        position="0 3 -7" 
+        radius="0" 
+        scale="2 2 2"
         material = "src: #earth;"
         animation="
           property: object3D.rotation.y;
@@ -85,90 +73,15 @@
         shadow>
       </a-sphere>
 
+      <!--mars-->
       <a-sphere 
-        position="-1 1.25 -5" 
-        radius=".25" 
+        position="3 1.25 -5" 
+        radius="0" 
+        scale=".5 .5 .5"
         material = "src: #mars;"
         animation="
           property: object3D.rotation.y;
           to: 160;
-          dur: 20000;
-          easing: linear;
-          loop: true"
-        shadow>
-      </a-sphere>
-
-      <a-sphere 
-        position="1.25 1.25 -5" 
-        radius="1.25" 
-        material = "src: #jupiter;"
-        animation="
-          property: object3D.rotation.y;
-          to: 360;
-          dur: 20000;
-          easing: linear;
-          loop: true"
-        shadow>
-      </a-sphere>
-
-      <a-sphere 
-        position="4.75 1.25 -5" 
-        radius="1" 
-        material = "src: #saturn;"
-        animation="
-          property: object3D.rotation.y;
-          to: 340;
-          dur: 20000;
-          easing: linear;
-          loop: true"
-        shadow>
-      </a-sphere>
-      <!--buitenste cirkel-->
-      <a-torus
-          id="saturnRing_1"
-          position="4.75 1.25 -5"
-          color="#d5bdaf"
-          segments-tubular="60"
-          radius="4"
-          radius-tubular="0.1"
-          rotation="90 0 0"
-          scale=".44 .44 0.04"
-          animation="property: rotation; to:  90 0 0; loop: true; dur: 3000"
-        ></a-torus>
-
-      <!--binnenste cirkel-->
-        <a-torus
-        id="saturnRing_2"
-        position="4.75 1.25 -5"
-        color="#ffffca"
-        segments-tubular="60"
-        radius="3"
-        radius-tubular="0.2"
-        rotation="90 0 0"
-        scale=".44 .44 0.04"
-        animation="property: rotation; to:  90 0 0; loop: true; dur: 3000"
-      ></a-torus>
-
-      <a-sphere 
-        position="8 1.25 -5" 
-        radius=".7" 
-        material = "src: #uranus;"
-        animation="
-          property: object3D.rotation.y;
-          to: 270;
-          dur: 20000;
-          easing: linear;
-          loop: true"
-        shadow>
-      </a-sphere>
-
-      <a-sphere 
-        position="10.5 1.25 -5" 
-        radius=".65" 
-        material = "src: #neptune;"
-        animation="
-          property: object3D.rotation.y;
-          to: 230;
           dur: 20000;
           easing: linear;
           loop: true"
